@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Finanças</title>
+</head>
+
+<link rel="stylesheet" href="./style.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,800;1,400&display=swap"
+    rel="stylesheet">
+
+<body>
+    <header>
+        <h1 id="logo">Filgueiras Design</h1>
+        <h2 class="imagem-logo"><img src="imagens/MARCA D'AGUA PRETA.png" alt=""></h2>
+    </header>
+
+    <main class="container">
+        <section id="balance">
+            <h2 class="sr-only">Balanço</h2>
+
+            <div class="card">
+                <h3>
+                    <span>Entradas</span>
+                    <img src="./imagens/assets/income.svg" alt="imagem de entradas">
+                </h3>
+                <p id="incomeDisplay">R$ 0,00</p>
+            </div>
+
+            <div class="card">
+                <h3>
+                    <span>Saídas</span>
+                    <img src="./imagens/assets/minus.svg" alt="imagem de saidas">
+                </h3>
+                <p id="expenseDisplay">R$ 0,00</p>
+            </div>
+
+            <div class="card total">
+                <h3>
+                    <span>Total</span>
+                    <img src="./imagens/assets/total.svg" alt="imagem de total">
+                </h3>
+                <p id="totalDisplay">R$ 0,00</p>
+            </div>
+
+
+        </section>
+
+        <section id="transaction">
+            <h2 class="sr-only">Transações</h2>
+            <a href="#"
+            onclick="Modal.open()"
+            class="button new"> + Nova Transação</a>
+        </section>
+
+
+        <table id="data-table">
+            <thead>
+                <tr>
+                    <th>Descrição</th>
+                    <th>Valor</th>
+                    <th>Data</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+
+        
+
+    </main>
+
+    <div class="modal-overlay">
+        <div class="modal">
+            <div id="form">
+                <h2>Nova Transação</h2>
+                <form action="" onsubmit="Form.submit(event)">
+                    <div class="input-group">
+                        <label class="sr-only" for="description">Descrição</label>
+                        <input type="text"
+                            id="description"
+                            name="description"
+                            placeholder="Descrição"/>
+
+                        <div class="input-group">
+                            <label class="sr-only" for="amount">Valor</label>
+                            <input
+                                type="number"
+                                step="0.01"
+                                id="amount"
+                                name="amount"
+                                placeholder="0,00" />
+                        </div>
+
+                        <small class="help">Use o sinal - (negativo) para despesas e,(vírgula) para casas
+                            decimais</small>
+
+                        <div class="input-group">
+                            <label class="sr-only" for="date">Data</label>
+                            <input
+                                type="date"
+                                id="date"
+                                name="date"/>
+
+                            <div class="input-group actions">
+                                <a onclick="Modal.close()" href="#" class="button cancel">Cancelar</a>
+                                <button>Salvar</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script src="./scripts.js">
+    </script>
+
+<footer><p>2021 - finances</p></footer>
+
+</body>
+
+</html>
